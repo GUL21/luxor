@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 11 2018 г., 01:06
+-- Время создания: Дек 11 2018 г., 17:14
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -19,6 +19,34 @@ SET time_zone = "+00:00";
 --
 -- База данных: `LUXOR`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `prices`
+--
+
+CREATE TABLE `prices` (
+  `price_id` int(11) NOT NULL,
+  `price_title` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `prices`
+--
+
+INSERT INTO `prices` (`price_id`, `price_title`, `price`) VALUES
+(1, 'предложенный шаблон', 'в описании'),
+(2, 'собственный шаблон', '5 000'),
+(3, 'админ-панель', 'бесплатно'),
+(4, 'адаптация', '2 000'),
+(5, 'анимация', '200'),
+(6, 'музыкальное сопровождение', 'договорная'),
+(7, 'перевод на украинский язык', '100'),
+(8, 'перевод на английский язык', '400'),
+(9, 'услуга администратора', '5 000'),
+(10, 'другое', 'договорная');
 
 -- --------------------------------------------------------
 
@@ -56,6 +84,12 @@ INSERT INTO `sites` (`id`, `img`, `title`, `link`, `admin`, `category`, `animati
 --
 
 --
+-- Индексы таблицы `prices`
+--
+ALTER TABLE `prices`
+  ADD PRIMARY KEY (`price_id`);
+
+--
 -- Индексы таблицы `sites`
 --
 ALTER TABLE `sites`
@@ -65,6 +99,11 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
+--
+-- AUTO_INCREMENT для таблицы `prices`
+--
+ALTER TABLE `prices`
+  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `sites`
 --
